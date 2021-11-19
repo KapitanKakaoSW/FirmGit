@@ -20,6 +20,7 @@ public class ClientView {
         this.model = model;
     }
 
+    // Ввод данных
     public void getInputs() {
 
         // Создаем экземпляр Scanner
