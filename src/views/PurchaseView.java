@@ -2,8 +2,8 @@ package views;
 
 import models.Purchase;
 import utils.Validator;
-
 import java.util.Scanner;
+
 
 public class PurchaseView {
 

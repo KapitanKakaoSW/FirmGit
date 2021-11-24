@@ -4,6 +4,7 @@ import models.Purchase;
 import utils.Rounder;
 import views.PurchaseView;
 
+
 public class PurchaseController {
 
     Purchase model;
@@ -18,7 +19,7 @@ public class PurchaseController {
 
         view.getInputs();
 
-        double priceInitial = model.calculatePurchase(model.getPrice(), model.getAmount());
+        double priceInitial = model.calculatePurchase(model.getAmount(), model.getPrice());
         String priceInitialRounded = Rounder.roundValue(priceInitial);
 
         double tax = model.calculateTax(priceInitial);
@@ -27,8 +28,8 @@ public class PurchaseController {
         double price = model.calculatePurchase(priceInitial, tax);
         String priceRounded = Rounder.roundValue(price);
 
-        String output = "Цена товара: " + priceInitialRounded + "\nСумма налога: " +
-                taxRounded + "\nЧистая прибыль: " + priceRounded;
+        String output = "Цена товара: " + priceInitialRounded + " грн." + "\nСумма налога: " +
+                taxRounded + " грн." + "\nЧистая прибыль: " + priceRounded + " грн.";
 
         view.getOutput(output);
     }
