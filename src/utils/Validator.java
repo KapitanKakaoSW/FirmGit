@@ -54,4 +54,22 @@ public class Validator {
         }
         return price;
     }
+    public static int validateOperationNumberInput(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            String str = scanner.nextLine().trim();
+            System.out.printf("\"%s\" - не число!\n", str);
+            System.out.print("Введите цифру операции!: ");
+        }
+        int quantity = scanner.nextInt();
+        while (quantity <= 0 | quantity > 2) {
+            System.out.println("Неверный номер операции! Попробуйте ещё раз: ");
+            while (!scanner.hasNextInt()) {
+                String str = scanner.next().trim();
+                System.out.printf("\"%s\" - не число!\n", str);
+                System.out.println("Введите номер операции!: ");
+            }
+            quantity = scanner.nextInt();
+        }
+        return quantity;
+    }
 }
